@@ -18,8 +18,10 @@ resource "proxmox_vm_qemu" "machines" {
   ipconfig0 = "ip=dhcp"
 
   network {
-    model  = "virtio"
-    bridge = "vmbr0"
+    model   = "virtio"
+    bridge  = "vmbr0"
+    macaddr = var.mac_address
+    tag     = var.vlan_id
   }
 
   disk {

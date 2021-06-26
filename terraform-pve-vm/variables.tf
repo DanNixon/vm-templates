@@ -55,6 +55,18 @@ variable "storage" {
   default     = "16G"
 }
 
+variable "mac_address" {
+  description = "MAC address of NIC"
+  type        = string
+  default     = ""
+}
+
+variable "vlan_id" {
+  description = "VLAN ID to tag packets with"
+  type        = number
+  default     = -1
+}
+
 variable "start_on_node_boot" {
   description = "If the VM should be started when the node boots"
   type        = bool
