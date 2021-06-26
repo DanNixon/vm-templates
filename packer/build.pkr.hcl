@@ -1,7 +1,6 @@
 build {
   sources = [
     "source.proxmox.arch",
-    "source.proxmox.arch-btrfs",
   ]
 
   provisioner "shell" {
