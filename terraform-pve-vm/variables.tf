@@ -57,8 +57,8 @@ variable "storage" {
 
 variable "mac_address" {
   description = "MAC address of NIC"
-  type        = string
-  default     = ""
+  type        = list(string)
+  default     = [""]
 }
 
 variable "vlan_id" {

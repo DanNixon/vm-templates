@@ -20,7 +20,7 @@ resource "proxmox_vm_qemu" "machines" {
   network {
     model   = "virtio"
     bridge  = "vmbr0"
-    macaddr = var.mac_address
+    macaddr = var.mac_address[count.index]
     tag     = var.vlan_id
   }
 
