@@ -1,24 +1,6 @@
-variable "pve_url" {
-  type = string
-}
-
-variable "pve_user" {
-  type    = string
-  default = "root@pam"
-}
-
-variable "pve_password" {
-  type = string
-}
-
 variable "pve_node" {
   type    = string
   default = "pve1"
-}
-
-variable "instances" {
-  type    = number
-  default = 1
 }
 
 variable "name" {
@@ -57,8 +39,8 @@ variable "storage" {
 
 variable "mac_address" {
   description = "MAC address of NIC"
-  type        = list(string)
-  default     = [""]
+  type        = string
+  default     = ""
 }
 
 variable "vlan_id" {

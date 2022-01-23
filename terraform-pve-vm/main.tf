@@ -1,7 +1,5 @@
 resource "proxmox_vm_qemu" "machines" {
-  count = var.instances
-
-  name = var.instances == 1 ? var.name : format("%s-%02d", var.name, count.index + 1)
+  name = var.name
   desc = var.description
 
   target_node = var.pve_node
@@ -20,7 +18,7 @@ resource "proxmox_vm_qemu" "machines" {
   network {
     model   = "virtio"
     bridge  = "vmbr0"
-    macaddr = var.mac_address[count.index]
+    macaddr = var.mac_address
     tag     = var.vlan_id
   }
 
